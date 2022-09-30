@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2737791783069023529, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2737791783816450519, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -742,6 +746,10 @@ PrefabInstance:
     - target: {fileID: 2737791783816450519, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737791783816450520, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2737791784416854541, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: maximumSpeed
@@ -795,6 +803,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2737791784416854579, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737791784558644364, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3993142403983162357, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: gunBarrel
       value: 
@@ -842,7 +858,7 @@ GameObject:
   - component: {fileID: 1740519265}
   - component: {fileID: 1740519264}
   - component: {fileID: 1740519263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallTest (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-    private float impulse;
+    private Vector3 defaultScale;
+    [SerializeField] private float[] ricochetScale;
+    [SerializeField] private float[] ricochetImpulse;
+    private float currentImpulse;
     private Rigidbody rigidBody;
     private int ricochetCount = 1;
 
@@ -14,7 +17,8 @@ public class PlayerProjectile : MonoBehaviour
     }
     void Start()
     {
-        rigidBody.AddRelativeForce(transform.forward * impulse, ForceMode.VelocityChange);
+        defaultScale = transform.localScale;
+        rigidBody.AddRelativeForce(transform.forward * currentImpulse, ForceMode.VelocityChange);
     }
 
 
@@ -28,7 +32,7 @@ public class PlayerProjectile : MonoBehaviour
 
     public void SetImpulse(float projectileImpulse)
     {
-        impulse = projectileImpulse;
+        currentImpulse = projectileImpulse;
     }
 
     public void SetRiochetAmount(int amount)
@@ -36,20 +40,25 @@ public class PlayerProjectile : MonoBehaviour
         ricochetCount = amount;
     }
 
+    private void SetScale(int remainingBounces)
+    {
+        transform.localScale = new Vector3(ricochetScale[remainingBounces], ricochetScale[remainingBounces], ricochetScale[remainingBounces]);
+    }
+
     private void RicochetProjectile(ContactPoint hitPoint)
     {
+        ricochetCount--;
+        SetImpulse(ricochetImpulse[ricochetCount]);
         Vector3 bounceDirection = Vector3.Reflect(transform.forward, hitPoint.normal);
         transform.forward = bounceDirection;
-        //rigidBody.velocity = Vector3.zero;
-        rigidBody.AddForce(transform.forward * impulse, ForceMode.VelocityChange); ///MAKE SURE WE TRIGGER THIS EVERY TIME WE HIT SOMETHING!!! Then make bounce layer
+        rigidBody.AddForce(transform.forward * currentImpulse, ForceMode.VelocityChange); /// Then make bounce layer
+        SetScale(ricochetCount);
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        ricochetCount--;
+    {        
         ContactPoint hit = collision.GetContact(0);
         RicochetProjectile(hit);
-
     }
 
 }
