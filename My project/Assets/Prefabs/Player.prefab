@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2737791783816450519}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2737791783816450520
 GameObject:
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2737791783816450516}
   - component: {fileID: 2737791783816450517}
   - component: {fileID: 2737791783816450518}
+  - component: {fileID: 3993142403983162357}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 2737791783069023528}
   m_Father: {fileID: 2737791784558644363}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2737791783816450516
 MeshFilter:
@@ -129,6 +130,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3993142403983162357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737791783816450520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d43dfab4831294abd0e9f22fdb2fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShots: 0
+  projectileDamage: 0
+  projectile: {fileID: 0}
+  gunBarrel: {fileID: 0}
 --- !u!1 &2737791784416854579
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +158,7 @@ GameObject:
   - component: {fileID: 2737791784416854578}
   - component: {fileID: 2737791784416854540}
   - component: {fileID: 2737791784416854541}
+  - component: {fileID: 4800092843887568034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -162,7 +180,7 @@ Transform:
   m_Children:
   - {fileID: 2737791784558644363}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2737791784416854578
 CharacterController:
@@ -277,6 +295,19 @@ MonoBehaviour:
   accelerationDuration: 1.5
   decelerationDuration: 0.75
   isInputEnabled: 0
+--- !u!114 &4800092843887568034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737791784416854579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b25169d7fec2c147b75eba67c65a64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireInputPressed: 0
 --- !u!1 &2737791784558644364
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +341,7 @@ Transform:
   m_Children:
   - {fileID: 2737791783816450519}
   m_Father: {fileID: 2737791784416854542}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2737791784558644360
 MeshFilter:

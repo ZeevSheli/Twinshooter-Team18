@@ -116,4 +116,5 @@ public class PlayerMovementController : MonoBehaviour
             playerBody.rotation = Quaternion.Euler(0, angle - 90, 0);
         }
     }
+
 }
