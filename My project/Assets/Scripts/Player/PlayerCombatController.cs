@@ -8,8 +8,7 @@ public class PlayerCombatController : MonoBehaviour
 
     public static PlayerCombatController Instance;
 
-    [HideInInspector]
-    public bool FireInputPressed = false;
+    [HideInInspector] public bool FireInputPressed = false;
 
     private void Awake()
     {

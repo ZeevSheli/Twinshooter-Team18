@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-    private Vector3 defaultScale;
+    [Header("Ricochet Modifiers")]
+    [Tooltip("The elements within this array represent the projectile scale based on the remaining bounces. Note that this means that element 0 represents the final projectile scale.")]
     [SerializeField] private float[] ricochetScale;
+    [Tooltip("The elements within this array represent the projectile ricochet impulse based on the remaining bounces. Note that this means that element 0 represents the final impulse.")]
     [SerializeField] private float[] ricochetImpulse;
     private float currentImpulse;
     private Rigidbody rigidBody;
     private int ricochetCount = 1;
-
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
     void Start()
     {
-        defaultScale = transform.localScale;
         rigidBody.AddRelativeForce(transform.forward * currentImpulse, ForceMode.VelocityChange);
     }
 
@@ -51,6 +51,7 @@ public class PlayerProjectile : MonoBehaviour
         SetImpulse(ricochetImpulse[ricochetCount]);
         Vector3 bounceDirection = Vector3.Reflect(transform.forward, hitPoint.normal);
         transform.forward = bounceDirection;
+        rigidBody.velocity = Vector3.zero;
         rigidBody.AddForce(transform.forward * currentImpulse, ForceMode.VelocityChange); /// Then make bounce layer
         SetScale(ricochetCount);
     }
