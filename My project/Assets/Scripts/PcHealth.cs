@@ -21,16 +21,34 @@ public class PcHealth : MonoBehaviour
     // Update is called once per frame
     void TakingDamage()
     {
-        // if they are hit 3 times, they die and end condition is triggered
-        // this needs to be saved, and not destroyed when function ends
-    }
-
-    void OnTriggerEnter()
-    {
-       // if (target.tag == "Bullet" && currentHealth => 2);
+        if (target.tag == "Bullet" && currentHealth >= 2)
         {
-      //      currentHealth = currentHealth - 1;
-        }
+            currentHealth == currentHealth--;
 
+        }
+        else if (target.tag == "Bullet" && currentHealth =< 0 || currentHealth == 1)
+        {
+            Death();
+        }
+                
     }
-}
+
+    void DisplayHealth()
+    {
+       
+        if (currentHealth == 3)
+        {
+            
+        } 
+      
+        
+           
+
+
+            
+    }
+        void Death()
+                {
+
+        }
+    }
