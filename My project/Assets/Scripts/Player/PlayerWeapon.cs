@@ -55,5 +55,4 @@ public class PlayerWeapon : MonoBehaviour
         timerFireRate = 0f;
     }
 
-
 }

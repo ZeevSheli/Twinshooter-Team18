@@ -135,3 +135,7 @@ MonoBehaviour:
   - 25
   - 20
   - 15
+  aimAssistLayer:
+    serializedVersion: 2
+    m_Bits: 320
+  aimAssistRadius: 0.75
