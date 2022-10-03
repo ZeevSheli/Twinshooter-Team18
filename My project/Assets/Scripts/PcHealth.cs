@@ -4,33 +4,75 @@ using UnityEngine;
 
 public class PcHealth : MonoBehaviour
 {
-    public SpriteRenderer firstHeart;
-    public SpriteRenderer middleHeart;
-    public SpriteRenderer finalHeart;
+    public GameObject firstHeart;
+    public GameObject middleHeart;
+    public GameObject finalHeart;
+    public GameObject deathUI;
     public int maxHealth = 3;
-    public int currentHealth;
+    public int currentHealth;   
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth; 
-            
-            // the player has 3 hearts 
+        currentHealth = maxHealth;
+        firstHeart.SetActive(true);
+        middleHeart.SetActive(true);
+        finalHeart.SetActive(true);
+        deathUI.SetActive(false);
+        // the player has 3 hearts 
     }
 
     // Update is called once per frame
-    void TakingDamage()
+    void OnTriggerEnter(Collider collider)
     {
-        // if they are hit 3 times, they die and end condition is triggered
-        // this needs to be saved, and not destroyed when function ends
+        if (collider.tag == "Bullet" && currentHealth >= 2)
+        {
+            currentHealth--;
+            Debug.Log("Shot but live");
+        }
+        else if (collider.tag == "Bullet" && currentHealth <= 0)
+        {
+            Death();
+        }
+        DisplayHealth();
     }
 
-    void OnTriggerEnter()
+
+    void DisplayHealth()
     {
-       // if (target.tag == "Bullet" && currentHealth => 2);
+       
+        if (currentHealth == 3)
         {
-      //      currentHealth = currentHealth - 1;
+            firstHeart.SetActive(true);
+            middleHeart.SetActive(true);
+            finalHeart.SetActive(true);
+        }
+        
+        else if (currentHealth == 2)
+        {
+            firstHeart.SetActive(false);
+            middleHeart.SetActive(true);
+            finalHeart.SetActive(true);
+        }
+        
+        else if (currentHealth == 1)
+        {
+            firstHeart.SetActive(false);
+            middleHeart.SetActive(false);
+            finalHeart.SetActive(true);
         }
 
+        else if (currentHealth == 0)
+        {
+            firstHeart.SetActive(false);
+            middleHeart.SetActive(false);
+            finalHeart.SetActive(false);
+        }
+    }
+    void Death()
+    {
+        deathUI.SetActive(true);
+        Debug.Log("OOF");
     }
 }
+
