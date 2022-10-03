@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 1057591535}
   - component: {fileID: 1057591534}
   - component: {fileID: 1057591533}
+  - component: {fileID: 1057591536}
   m_Layer: 8
   m_Name: EnemyMesh
   m_TagString: Enemy
@@ -643,6 +644,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057591531}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1057591536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057591531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1138840502
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +851,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
+--- !u!1001 &1423957149
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401141, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_Name
+      value: RicochetWall (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
 --- !u!1001 &1658679624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1169,3 +1240,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 23.858, z: 0}
+--- !u!1001 &1812194266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.80048
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401140, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182396611998401141, guid: e9ede24eac6307d499cb498e036868a0, type: 3}
+      propertyPath: m_Name
+      value: RicochetWall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9ede24eac6307d499cb498e036868a0, type: 3}

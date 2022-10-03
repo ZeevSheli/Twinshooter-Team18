@@ -12,6 +12,7 @@ public class PlayerProjectile : MonoBehaviour
     private float currentImpulse;
     private Rigidbody rigidBody;
     private int ricochetCount = 0;
+    private int currentBounce = -1;
 
     [Header("Aim Assist Attributes")]
     [Tooltip("The objects on these layers will pull the projectile based on the Aim Assist Radius.")]
@@ -71,22 +72,30 @@ public class PlayerProjectile : MonoBehaviour
 
     private void RicochetProjectile(ContactPoint hitPoint)
     {
-        ricochetCount--;
+        if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
+        {
+            ricochetCount--;
+        }
 
+        if(currentBounce < ricochetImpulse.Length - 1)
+        {
+            currentBounce++;
+        }
+              
         if(ricochetCount >= 0)
         {
-            SetImpulse(ricochetImpulse[ricochetCount]);
+            SetImpulse(ricochetImpulse[currentBounce]);
             Vector3 bounceDirection = Vector3.Reflect(transform.forward, hitPoint.normal);
 
             if (FindAimTarget(bounceDirection))
             {
-                Debug.Log("FOUND TARGET");
-                //aimAssistActive = true;
+                //Debug.Log("FOUND TARGET"); 
+                //aimAssistActive = true; //extra stuff for dynamic aim assist mid movement.
                 AimAssist();
             }
             else
             {
-                Debug.Log("NO TARGET FOUND");
+                //Debug.Log("NO TARGET FOUND");
                 desiredTarget = null; //does nothing currently. Comes into play when gradually curving towards moving target
                 aimAssistActive = false;
             }
@@ -95,7 +104,7 @@ public class PlayerProjectile : MonoBehaviour
             transform.forward = directionToTarget;
             rigidBody.velocity = Vector3.zero;
             rigidBody.AddForce(transform.forward * currentImpulse, ForceMode.VelocityChange); /// Then make bounce layer
-            SetScale(ricochetCount);           
+            SetScale(currentBounce);           
         }
         
     }
@@ -106,12 +115,14 @@ public class PlayerProjectile : MonoBehaviour
         //if true -- AimAssist 
         Debug.DrawRay(transform.position, direction * 5f, Color.green, 2f);
 
+        ///THIS IS THE IMPORTANT STUFF - OLD RAYCAST!!!
+        
         if(Physics.SphereCast(transform.position, aimAssistRadius, direction, out RaycastHit impact, Mathf.Infinity, aimAssistLayer)) //IMPROVE WITH SPHERECASTALL??? Prioritize enemies, ricochet and then wall
         {        
             directionToTarget = impact.transform.position - transform.position;
             return true;                
         }
-
+        
         directionToTarget = direction;       
         return false;
     }
