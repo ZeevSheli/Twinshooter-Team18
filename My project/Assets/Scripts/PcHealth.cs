@@ -30,7 +30,7 @@ public class PcHealth : MonoBehaviour
             currentHealth--;
             Debug.Log("Shot but live");
         }
-        else if (collider.tag == "Bullet" && currentHealth <= 0)
+        else if (collider.tag == "Bullet" && currentHealth <= 1)
         {
             Death();
         }
@@ -73,6 +73,7 @@ public class PcHealth : MonoBehaviour
     {
         deathUI.SetActive(true);
         Debug.Log("OOF");
+        currentHealth = 0;
     }
 }
 
