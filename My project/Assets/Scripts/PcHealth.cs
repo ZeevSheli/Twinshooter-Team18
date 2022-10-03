@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PcHealth : MonoBehaviour
 {
+    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int currentHealth;
+
     public GameObject firstHeart;
     public GameObject middleHeart;
     public GameObject finalHeart;
     public GameObject deathUI;
-    public int maxHealth = 3;
-    public int currentHealth;   
+
+    public AudioSource audioSource;
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +24,7 @@ public class PcHealth : MonoBehaviour
         middleHeart.SetActive(true);
         finalHeart.SetActive(true);
         deathUI.SetActive(false);
-        // the player has 3 hearts 
+
     }
 
     // Update is called once per frame
@@ -27,13 +32,17 @@ public class PcHealth : MonoBehaviour
     {
         if (collider.tag == "Bullet" && currentHealth >= 2)
         {
+            audioSource.PlayOneShot(hurtSound, 0.8f);
             currentHealth--;
             Debug.Log("Shot but live");
         }
-        else if (collider.tag == "Bullet" && currentHealth <= 0)
+        else if (collider.tag == "Bullet" && currentHealth <= 1)
         {
+            audioSource.PlayOneShot(hurtSound, 0.8f);
+            currentHealth--;
             Death();
         }
+       
         DisplayHealth();
     }
 
@@ -71,8 +80,10 @@ public class PcHealth : MonoBehaviour
     }
     void Death()
     {
+        audioSource.PlayOneShot(deathSound, 0.6f);
         deathUI.SetActive(true);
         Debug.Log("OOF");
+        
     }
 }
 

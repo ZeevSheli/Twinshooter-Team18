@@ -17,8 +17,8 @@ TagManager:
   - RicochetSurface
   - PlayerProjectile
   - Enemy
-  - 
-  - 
+  - Ground
+  - Player
   - 
   - 
   - 
