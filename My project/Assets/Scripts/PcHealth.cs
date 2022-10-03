@@ -8,8 +8,10 @@ public class PcHealth : MonoBehaviour
     public GameObject middleHeart;
     public GameObject finalHeart;
     public GameObject deathUI;
-    public int maxHealth = 3;
-    public int currentHealth;   
+
+
+    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int currentHealth;   
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,12 @@ public class PcHealth : MonoBehaviour
             currentHealth--;
             Debug.Log("Shot but live");
         }
-        else if (collider.tag == "Bullet" && currentHealth <= 1)
+        else if (collider.tag == "Bullet" && currentHealth == 1)
         {
+            currentHealth--;
             Death();
         }
+       
         DisplayHealth();
     }
 
@@ -73,7 +77,7 @@ public class PcHealth : MonoBehaviour
     {
         deathUI.SetActive(true);
         Debug.Log("OOF");
-        currentHealth = 0;
+        
     }
 }
 
