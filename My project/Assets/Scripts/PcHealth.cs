@@ -7,10 +7,9 @@ public class PcHealth : MonoBehaviour
     public GameObject firstHeart;
     public GameObject middleHeart;
     public GameObject finalHeart;
+    public GameObject deathUI;
     public int maxHealth = 3;
-    public int currentHealth;
-    public bool collision;
-   
+    public int currentHealth;   
 
     // Start is called before the first frame update
     void Start()
@@ -19,32 +18,23 @@ public class PcHealth : MonoBehaviour
         firstHeart.SetActive(true);
         middleHeart.SetActive(true);
         finalHeart.SetActive(true);
-
+        deathUI.SetActive(false);
         // the player has 3 hearts 
     }
 
     // Update is called once per frame
-    void TakingDamage()
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision = true && currentHealth >= 2)
+        if (collider.tag == "Bullet" && currentHealth >= 2)
         {
             currentHealth--;
-
+            Debug.Log("Shot but live");
         }
-        else if (collision = true && currentHealth <= 0 || currentHealth == 1)
+        else if (collider.tag == "Bullet" && currentHealth <= 0)
         {
             Death();
         }
-                
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.tag == "Bullet")
-        {
-            collision = true;
-        }
-  
+        DisplayHealth();
     }
 
 
@@ -70,11 +60,18 @@ public class PcHealth : MonoBehaviour
             firstHeart.SetActive(false);
             middleHeart.SetActive(false);
             finalHeart.SetActive(true);
-        }    
+        }
 
+        else if (currentHealth == 0)
+        {
+            firstHeart.SetActive(false);
+            middleHeart.SetActive(false);
+            finalHeart.SetActive(false);
+        }
     }
     void Death()
     {
+        deathUI.SetActive(true);
         Debug.Log("OOF");
     }
 }
