@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2737791783069023528}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GunEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2737791783069023529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.519, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.69894004, z: -0, w: 0.71518034}
+  m_LocalPosition: {x: 0.949, y: 0, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2737791783816450519}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.684, z: 0}
 --- !u!1 &2737791783816450520
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2737791783816450517}
   - component: {fileID: 2737791783816450518}
   - component: {fileID: 3993142403983162357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2737791783816450520}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5120001, y: 0.18199998, z: 0}
   m_LocalScale: {x: 1, y: 0.28265005, z: 0.21549}
   m_ConstrainProportionsScale: 0
@@ -142,10 +142,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d43dfab4831294abd0e9f22fdb2fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenShots: 0
-  projectileDamage: 0
-  projectile: {fileID: 0}
-  gunBarrel: {fileID: 0}
+  timeBetweenShots: 1
+  projectileImpulse: 10
+  projectileDamage: 100
+  ricochetBounces: 3
+  projectileLifeTime: 10
+  projectile: {fileID: 555510557692424903, guid: 29f6f00b18ae7c5499280bee2c4e3056, type: 3}
+  gunBarrel: {fileID: 2737791783069023528}
 --- !u!1 &2737791784416854579
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +162,7 @@ GameObject:
   - component: {fileID: 2737791784416854540}
   - component: {fileID: 2737791784416854541}
   - component: {fileID: 4800092843887568034}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +176,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2737791784416854579}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.0331364, y: 0.41531944, z: 4.470232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -242,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2bba174913244eb68c393806b5cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumSpeed: 15
+  maximumSpeed: 10
   gravityValue: 0.7
   accelerationCurve:
     serializedVersion: 2
@@ -320,7 +323,7 @@ GameObject:
   - component: {fileID: 2737791784558644360}
   - component: {fileID: 2737791784558644361}
   - component: {fileID: 2737791784558644362}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
