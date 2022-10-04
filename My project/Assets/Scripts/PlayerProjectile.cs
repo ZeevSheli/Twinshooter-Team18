@@ -19,8 +19,8 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] private LayerMask aimAssistLayer;
     [Tooltip("SphereCast Radius sent along the actual ricochet direction to determine if any targets are in range on the Aim Assist Layer. A hit will cause the bullet to alter its direction towards the target.")]
     [SerializeField] private float aimAssistRadius;
-    Transform desiredTarget; //Could be used to improve aim assist
-    bool aimAssistActive;
+    //Transform desiredTarget; //Could be used to improve aim assist
+    //bool aimAssistActive;
 
     Vector3 directionToTarget;
 
@@ -96,8 +96,8 @@ public class PlayerProjectile : MonoBehaviour
             else
             {
                 //Debug.Log("NO TARGET FOUND");
-                desiredTarget = null; //does nothing currently. Comes into play when gradually curving towards moving target
-                aimAssistActive = false;
+                //desiredTarget = null; //does nothing currently. Comes into play when gradually curving towards moving target
+                //aimAssistActive = false;
             }
 
             //transform.forward = bounceDirection;

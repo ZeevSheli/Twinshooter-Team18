@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
+    /*
   //  static AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -19,5 +20,6 @@ using UnityEngine;
         //audioSource.clip = Audio.Load<AudioClip>("Hurt");
         //audioSource.Play();
     }
+    */
 }
 
