@@ -24,6 +24,9 @@ public class PlayerProjectile : MonoBehaviour
 
     Vector3 directionToTarget;
 
+    public AudioSource audioSource;
+    public AudioClip bounceSound;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -74,6 +77,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
         {
+            audioSource.PlayOneShot(bounceSound, 0.6f);
             ricochetCount--;
         }
 
