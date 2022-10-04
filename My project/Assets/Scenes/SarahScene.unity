@@ -529,6 +529,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &292158285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412817486952200791, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+  m_PrefabInstance: {fileID: 1029166702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &311344084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412817487993728825, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+  m_PrefabInstance: {fileID: 1029166702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &315681054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2737791784416854542, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
@@ -2229,6 +2239,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1026886860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412817487086843301, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+  m_PrefabInstance: {fileID: 1029166702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1029166702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2326,6 +2341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+--- !u!1 &1223040596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412817488794369450, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+  m_PrefabInstance: {fileID: 1029166702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1290785790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,6 +3141,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6833825674237163541, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: deathUI
+      value: 
+      objectReference: {fileID: 1026886860}
+    - target: {fileID: 6833825674237163541, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: finalHeart
+      value: 
+      objectReference: {fileID: 311344084}
+    - target: {fileID: 6833825674237163541, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: firstHeart
+      value: 
+      objectReference: {fileID: 1223040596}
+    - target: {fileID: 6833825674237163541, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: middleHeart
+      value: 
+      objectReference: {fileID: 292158285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
 --- !u!1 &1708509572 stripped

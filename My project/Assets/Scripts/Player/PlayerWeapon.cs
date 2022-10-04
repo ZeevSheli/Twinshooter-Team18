@@ -24,6 +24,9 @@ public class PlayerWeapon : MonoBehaviour
     [Tooltip("Spawn point for instantiated projectile.")]
     [SerializeField] private Transform gunBarrel;
 
+    public AudioClip fireSound;
+    public AudioSource audioSource;
+
     private void Start()
     {
         timerFireRate = timeBetweenShots;
@@ -45,6 +48,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void FireProjectile()
     {
+        audioSource.PlayOneShot(fireSound, 0.6f);
         GameObject cloneProjectile = Instantiate(projectile, gunBarrel.position, Quaternion.identity);
         cloneProjectile.transform.forward = gunBarrel.transform.forward;
         Destroy(cloneProjectile, projectileLifeTime);
