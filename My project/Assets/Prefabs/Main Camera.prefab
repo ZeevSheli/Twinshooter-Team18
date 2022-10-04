@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6095667412449095956}
-  m_LocalRotation: {x: 0.44603518, y: -0, z: -0, w: 0.8950155}
+  m_LocalRotation: {x: 0.44603375, y: 0, z: 0, w: 0.8950162}
   m_LocalPosition: {x: -5.147, y: 4.974, z: 1.206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   currentState: 0
-  shouldAlwaysFollowPlayerInGameplay: 0
+  shouldAlwaysFollowPlayerInGameplay: 1
   screenEdgeForFollow: {x: 0.35, y: 0.35}
   followDamping: 16
   dampingScreenEdgeDistance:
