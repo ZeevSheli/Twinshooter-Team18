@@ -142,6 +142,12 @@ public class PlayerProjectile : MonoBehaviour
     {        
         ContactPoint hit = collision.GetContact(0);
         RicochetProjectile(hit);
+
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit Enemy");
+            Destroy(collision.gameObject);
+        }
     }
 
 }

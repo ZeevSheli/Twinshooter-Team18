@@ -139,7 +139,7 @@ MonoBehaviour:
   aimAssistLayer:
     serializedVersion: 2
     m_Bits: 320
-  aimAssistRadius: 0.5
+  aimAssistRadius: 0.75
   audioSource: {fileID: -2905291704930165152}
   bounceSound: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
 --- !u!82 &-2905291704930165152
