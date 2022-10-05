@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip enemySpawningSound;
+    public AudioClip enemyDied;
 
     private void Start()
     {
@@ -27,9 +28,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (spawnGateActive)
         {
-            timerSpawnRate += Time.deltaTime;
-
-            if(timerSpawnRate >= timeBetweenSpawns && currentEnemies < maxEnemies)
+            if(currentEnemies < maxEnemies)
+            {
+                timerSpawnRate += Time.deltaTime;
+            }
+            
+            if(timerSpawnRate >= timeBetweenSpawns)
             {
                 SpawnEnemy();
                 timerSpawnRate = 0;
@@ -58,6 +62,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void EnemyDeath()
     {
+        audioSource.PlayOneShot(enemyDied, 0.8f);
         currentEnemies--;
     }
 }
