@@ -22,6 +22,8 @@ public class PlayerProjectile : MonoBehaviour
     //Transform desiredTarget; //Could be used to improve aim assist
     //bool aimAssistActive;
 
+    [SerializeField] EnemySpawner enemySpawnMEGAPLACEHOLDER;
+
     Vector3 directionToTarget;
 
     public AudioSource audioSource;
@@ -34,6 +36,7 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         rigidBody.AddRelativeForce(transform.forward * currentImpulse, ForceMode.VelocityChange);
+        enemySpawnMEGAPLACEHOLDER = GameObject.Find("EnemySpawnGate").GetComponent<EnemySpawner>(); //REMOOOOOOOVE
     }
 
 
@@ -46,16 +49,6 @@ public class PlayerProjectile : MonoBehaviour
 
         //Update AimBOT Target --- Get Target on ricochet with a sphere cast. Set EnemySet initial direction the same? but update gradually with acceleration + Clamp maxspeed.
         //Detect if target was either Enemy or ricochetSurface. If that is the case set target. if target was set we don't update target!! Only get target on Ricochet call!
-    }
-
-    private void FixedUpdate()
-    {
-
-       /* if (aimAssistActive)
-        {
-            AimAssist();
-        }
-       */
     }
 
     public void SetImpulse(float projectileImpulse)
@@ -75,9 +68,11 @@ public class PlayerProjectile : MonoBehaviour
 
     private void RicochetProjectile(ContactPoint hitPoint)
     {
+        audioSource.PlayOneShot(bounceSound, 0.6f);
+
         if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
         {
-            audioSource.PlayOneShot(bounceSound, 0.6f);
+            
             ricochetCount--;
         }
 
@@ -104,7 +99,6 @@ public class PlayerProjectile : MonoBehaviour
                 //aimAssistActive = false;
             }
 
-            //transform.forward = bounceDirection;
             transform.forward = directionToTarget;
             rigidBody.velocity = Vector3.zero;
             rigidBody.AddForce(transform.forward * currentImpulse, ForceMode.VelocityChange); /// Then make bounce layer
@@ -115,11 +109,7 @@ public class PlayerProjectile : MonoBehaviour
 
     private bool FindAimTarget(Vector3 direction)
     {
-        //This method sends sphere cast in search for either an enemy or ricochet surface and sets projectile desiredTarget
-        //if true -- AimAssist 
         Debug.DrawRay(transform.position, direction * 5f, Color.green, 2f);
-
-        ///THIS IS THE IMPORTANT STUFF - OLD RAYCAST!!!
         
         if(Physics.SphereCast(transform.position, aimAssistRadius, direction, out RaycastHit impact, Mathf.Infinity, aimAssistLayer)) //IMPROVE WITH SPHERECASTALL??? Prioritize enemies, ricochet and then wall
         {        
@@ -133,8 +123,6 @@ public class PlayerProjectile : MonoBehaviour
 
     private void AimAssist()
     {
-        //This method adjusts the direction/velocity of the projectile gradually towards the target -- Rotate gradually the bullet towards the target. Apply velocity change in forward direction.
-        //Maybe do get this direction before applying impulse. -- Test this first
         Debug.DrawRay(transform.position, directionToTarget, Color.red, 2f);
     }
 
@@ -146,8 +134,20 @@ public class PlayerProjectile : MonoBehaviour
         if (collision.collider.CompareTag("Enemy"))
         {
             Debug.Log("Hit Enemy");
+            enemySpawnMEGAPLACEHOLDER.EnemyDeath(); //THIIIIIS NEEEEEDS TOOOO BE MOOOOVED ---- Do it when I get access to Enemy script ///Make enemies move to random position at spawn. Enemy Nav Obstacle
             Destroy(collision.gameObject);
         }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Void"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
 }

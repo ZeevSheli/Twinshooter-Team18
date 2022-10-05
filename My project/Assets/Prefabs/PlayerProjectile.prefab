@@ -133,13 +133,14 @@ MonoBehaviour:
   - 0.4
   - 0.3
   ricochetImpulse:
-  - 15
-  - 20
-  - 25
+  - 22
+  - 27
+  - 32
   aimAssistLayer:
     serializedVersion: 2
     m_Bits: 320
-  aimAssistRadius: 0.75
+  aimAssistRadius: 0.8
+  enemySpawnMEGAPLACEHOLDER: {fileID: 0}
   audioSource: {fileID: -2905291704930165152}
   bounceSound: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
 --- !u!82 &-2905291704930165152
