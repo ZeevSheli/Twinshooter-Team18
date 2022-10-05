@@ -37,10 +37,6 @@ public class EnemyController : MonoBehaviour
                 enemyAttack.Attack();
                 FaceTarget();
             }
-            else
-            {
-                enemyAttack.HideWeapon();
-            }
         }
         
     }

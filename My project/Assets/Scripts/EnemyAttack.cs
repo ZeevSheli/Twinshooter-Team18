@@ -7,6 +7,8 @@ public class EnemyAttack : MonoBehaviour
 {
     private int enemyDamage = 1;
     [SerializeField] GameObject spear;
+    [SerializeField] private Animator anim; 
+    
     
     // Start is called before the first frame update
     void Start()
@@ -23,12 +25,7 @@ public class EnemyAttack : MonoBehaviour
 
     public void Attack()
     {
-        spear.SetActive(true);
-    }
-
-    public void HideWeapon()
-    {
-        spear.SetActive(false);
+        anim.SetTrigger("attack");
     }
 
     private void OnTriggerEnter(Collider other) //OnCollisionEnter 
