@@ -8,12 +8,16 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int maxHealth= 3;
     private int currentHealth = 1;
 
+    public AudioSource audioSource;
+    public AudioClip deathSound;
+    public float volume;
 
     private void Update()
     {
 
         if(currentHealth <= 0)
         {
+            audioSource.PlayOneShot(deathSound, volume);
             Death();
         }   
         
@@ -30,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     private void Death()
-    {
+    { 
         owner.EnemyDeath();
         Destroy(gameObject);
     }
