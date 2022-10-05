@@ -29,7 +29,8 @@ public class PlayerProjectile : MonoBehaviour
     Vector3 directionToTarget;
 
     public AudioSource audioSource;
-    public AudioClip bounceSound;
+    public AudioClip goodBounceSound;
+    public AudioClip badBounceSound;
 
     private void Awake()
     {
@@ -80,11 +81,12 @@ public class PlayerProjectile : MonoBehaviour
         if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
         {
             //This is if it is NOT a Yellow RichochetTarget -- put awwwweeesome sound here
+            audioSource.PlayOneShot(badBounceSound, 0.4f);
             ricochetCount--;
         }
         else
         {            
-            audioSource.PlayOneShot(bounceSound, 0.6f); //this is when it hits a yellow thing
+            audioSource.PlayOneShot(goodBounceSound, 0.6f); //this is when it hits a yellow thing
         }
 
         if(currentBounce < ricochetImpulse.Length - 1)

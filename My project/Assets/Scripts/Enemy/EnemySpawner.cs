@@ -15,6 +15,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform spawnLocation;
     private bool spawnGateActive = false;
 
+    public AudioSource audioSource;
+    public AudioClip enemySpawningSound;
+
     private void Start()
     {
         timerSpawnRate = timeBetweenSpawns;
@@ -36,6 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        audioSource.PlayOneShot(enemySpawningSound, 0.83f);
         currentEnemies++;
         GameObject enemy = Instantiate(enemyPrefabs[0], spawnLocation.position, spawnLocation.rotation);
         enemy.GetComponent<EnemyHealth>().SetSpawner(this);

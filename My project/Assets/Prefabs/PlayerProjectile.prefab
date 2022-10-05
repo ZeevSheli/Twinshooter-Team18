@@ -142,7 +142,8 @@ MonoBehaviour:
   aimAssistRadius: 0.8
   enemySpawnMEGAPLACEHOLDER: {fileID: 0}
   audioSource: {fileID: -2905291704930165152}
-  bounceSound: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
+  goodBounceSound: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
+  badBounceSound: {fileID: 8300000, guid: aad5e14f83edd2f4193a3cb869146d83, type: 3}
 --- !u!82 &-2905291704930165152
 AudioSource:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.649
   m_Pitch: 1
   Loop: 0
   Mute: 0
