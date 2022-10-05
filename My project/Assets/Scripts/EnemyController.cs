@@ -6,9 +6,10 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
-
+    public float attackRange = 2f;
     Transform target;
     NavMeshAgent agent;
+    
 
     EnemyAttack enemyAttack;
 
@@ -29,7 +30,7 @@ public class EnemyController : MonoBehaviour
         {
             agent.SetDestination(target.position);
 
-            if (distance <= agent.stoppingDistance)
+            if (distance <= attackRange)
             {
                 // Attack Code here
 
