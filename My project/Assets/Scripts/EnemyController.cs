@@ -10,11 +10,14 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
 
+    EnemyAttack enemyAttack;
+
     // Start is called before the first frame update
     void Start()
     {
         target = PlayerManager.instance.player.transform;    
         agent = GetComponent<NavMeshAgent>();
+        enemyAttack = GetComponentInChildren<EnemyAttack>();
     }
 
     // Update is called once per frame
@@ -31,7 +34,12 @@ public class EnemyController : MonoBehaviour
                 // Attack Code here
 
                 // Call Face the target function
+                enemyAttack.Attack();
                 FaceTarget();
+            }
+            else
+            {
+                enemyAttack.HideWeapon();
             }
         }
         
