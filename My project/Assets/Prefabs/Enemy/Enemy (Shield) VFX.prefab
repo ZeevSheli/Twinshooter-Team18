@@ -1402,7 +1402,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponParent
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3020145837323959050, guid: 5e7f6d1e53b3ed84c9cecb34645fb543, type: 3}
+    - {fileID: 5287773164371233866, guid: 5e7f6d1e53b3ed84c9cecb34645fb543, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5e7f6d1e53b3ed84c9cecb34645fb543, type: 3}
 --- !u!4 &8632449142385124750 stripped
 Transform:
