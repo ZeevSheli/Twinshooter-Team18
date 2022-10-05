@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     {
         currentEnemies++;
         GameObject enemy = Instantiate(enemyPrefabs[0], spawnLocation.position, spawnLocation.rotation);
-        //enemy.SetSpawner(this);
+        enemy.GetComponent<EnemyHealth>().SetSpawner(this);
         
     }
 

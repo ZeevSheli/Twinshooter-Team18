@@ -14,6 +14,8 @@ public class PlayerProjectile : MonoBehaviour
     private int ricochetCount = 0;
     private int currentBounce = -1;
 
+    private int damage = 0;
+
     [Header("Aim Assist Attributes")]
     [Tooltip("The objects on these layers will pull the projectile based on the Aim Assist Radius.")]
     [SerializeField] private LayerMask aimAssistLayer;
@@ -59,6 +61,11 @@ public class PlayerProjectile : MonoBehaviour
     public void SetRiochetAmount(int amount)
     {
         ricochetCount = amount;
+    }
+
+    public void SetDamage(int projectileDamage)
+    {
+        damage = projectileDamage;
     }
 
     private void SetScale(int remainingBounces)
@@ -133,9 +140,9 @@ public class PlayerProjectile : MonoBehaviour
 
         if (collision.collider.CompareTag("Enemy"))
         {
-            Debug.Log("Hit Enemy");
-            enemySpawnMEGAPLACEHOLDER.EnemyDeath(); //THIIIIIS NEEEEEDS TOOOO BE MOOOOVED ---- Do it when I get access to Enemy script ///Make enemies move to random position at spawn. Enemy Nav Obstacle
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyHealth>().ApplyDamage(damage);
+            //enemySpawnMEGAPLACEHOLDER.EnemyDeath(); //THIIIIIS NEEEEEDS TOOOO BE MOOOOVED ---- Do it when I get access to Enemy script ///Make enemies move to random position at spawn. Enemy Nav Obstacle
+            //Destroy(collision.gameObject);
         }
 
     }

@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemySpawnTrigger : MonoBehaviour
 {
     EnemySpawner spawnGate;
-
+    AudioSource enemyMusic;
 
     private void Start()
     {
         spawnGate = GetComponentInParent<EnemySpawner>();
+        enemyMusic = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +18,7 @@ public class EnemySpawnTrigger : MonoBehaviour
         if (other.CompareTag("Player") && !spawnGate.GetSpawnGateActive())
         {
             spawnGate.SetSpawnGateActive(true);
+            enemyMusic.Play();
         }
 
     }
