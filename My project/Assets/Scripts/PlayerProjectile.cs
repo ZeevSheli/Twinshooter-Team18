@@ -75,12 +75,16 @@ public class PlayerProjectile : MonoBehaviour
 
     private void RicochetProjectile(ContactPoint hitPoint)
     {
-        audioSource.PlayOneShot(bounceSound, 0.6f);
+        
 
         if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
         {
-            
+            //This is if it is NOT a Yellow RichochetTarget -- put awwwweeesome sound here
             ricochetCount--;
+        }
+        else
+        {            
+            audioSource.PlayOneShot(bounceSound, 0.6f); //this is when it hits a yellow thing
         }
 
         if(currentBounce < ricochetImpulse.Length - 1)
