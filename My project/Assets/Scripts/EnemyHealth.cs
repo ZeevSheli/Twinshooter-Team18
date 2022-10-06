@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            audioSource.PlayOneShot(deathSound, volume);
+            audioSource.Play();
             Death();
         }   
         
