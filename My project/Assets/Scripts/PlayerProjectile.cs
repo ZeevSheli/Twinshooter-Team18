@@ -23,13 +23,13 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] private LayerMask aimAssistLayer;
     [Tooltip("SphereCast Radius sent along the actual ricochet direction to determine if any targets are in range on the Aim Assist Layer. A hit will cause the bullet to alter its direction towards the target.")]
     [SerializeField] private float aimAssistRadius;
-    //Transform desiredTarget; //Could be used to improve aim assist
-    //bool aimAssistActive;
 
-    [SerializeField] EnemySpawner enemySpawnMEGAPLACEHOLDER;
+    [Header("Hit FX")]
+    [SerializeField] private ParticleSystem hitRicochet;
 
     Vector3 directionToTarget;
 
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip goodBounceSound;
     public AudioClip badBounceSound;
@@ -41,7 +41,6 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         rigidBody.AddRelativeForce(transform.forward * currentImpulse, ForceMode.VelocityChange);
-        enemySpawnMEGAPLACEHOLDER = GameObject.Find("EnemySpawnGate").GetComponent<EnemySpawner>(); //REMOOOOOOOVE
     }
 
 
@@ -100,6 +99,7 @@ public class PlayerProjectile : MonoBehaviour
         else
         {            
             audioSource.PlayOneShot(goodBounceSound, 0.6f); //this is when it hits a yellow thing
+            Instantiate(hitRicochet, hitPoint.point, transform.rotation);
         }
 
         if(currentBounce < ricochetImpulse.Length - 1)

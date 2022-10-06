@@ -4871,7 +4871,7 @@ GameObject:
   - component: {fileID: 1286360210}
   m_Layer: 9
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: RicochetTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
