@@ -117,4 +117,9 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    public Vector2 GetLookRotation()
+    {
+        return rightStickPosition;
+    }
+
 }

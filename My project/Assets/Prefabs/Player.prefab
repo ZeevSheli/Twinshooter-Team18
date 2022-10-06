@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 847692180}
   - component: {fileID: 847692183}
   - component: {fileID: 847692182}
+  - component: {fileID: 1502579761}
   m_Layer: 3
   m_Name: LaserSight
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1502579761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847692179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b21595f627876408734c8b182ccaf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1498216905
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 1
   projectileImpulse: 17
-  projectileDamage: 100
+  projectileDamage: 1
   ricochetBounces: 3
   projectileLifeTime: 10
   projectile: {fileID: 555510557692424903, guid: 29f6f00b18ae7c5499280bee2c4e3056, type: 3}
@@ -696,7 +709,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0096f1a5a219d2942a28f53bca4af1cc, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -797,7 +810,7 @@ GameObject:
   - component: {fileID: 1316872590474126729}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,7 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2bba174913244eb68c393806b5cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumSpeed: 5.5
+  maximumSpeed: 6.24
   gravityValue: 0.7
   accelerationCurve:
     serializedVersion: 2
@@ -961,7 +974,6 @@ MonoBehaviour:
   firstHeart: {fileID: 0}
   middleHeart: {fileID: 0}
   finalHeart: {fileID: 0}
-  deathUI: {fileID: 0}
   audioSource: {fileID: 1316872590474126729}
   hurtSound: {fileID: 8300000, guid: a84e0dfdf2315054a81b1e9c01c973f3, type: 3}
   deathSound: {fileID: 8300000, guid: 9320f4b1578403446ac7a8deec01ed5d, type: 3}

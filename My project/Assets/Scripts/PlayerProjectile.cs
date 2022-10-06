@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [Header("Ricochet Modifiers")]
-    [Tooltip("The elements within this array represent the projectile scale based on the remaining bounces. Note that this means that element 0 represents the final projectile scale.")]
+    [Tooltip("The elements within this array represent the projectile damage based on the current bounce count. Note that 0 represents the first bounce")]
+    [SerializeField] private int[] ricochetDamage;
+    [Tooltip("The elements within this array represent the projectile scale based on the current bounce count. Note that 0 represents the first bounce")]
     [SerializeField] private float[] ricochetScale;
-    [Tooltip("The elements within this array represent the projectile ricochet impulse based on the remaining bounces. Note that this means that element 0 represents the final impulse.")]
+    [Tooltip("The elements within this array represent the projectile impulse based on the current bounce count. Note that 0 represents the first bounce")]
     [SerializeField] private float[] ricochetImpulse;
     private float currentImpulse;
     private Rigidbody rigidBody;
@@ -50,6 +52,18 @@ public class PlayerProjectile : MonoBehaviour
             Destroy(gameObject);
         }
 
+        switch (currentBounce)
+        {
+            case 0:
+                damage = ricochetDamage[0];
+                break;
+            case 1:
+                damage = ricochetDamage[1];
+                break;
+            case 2:
+                damage = ricochetDamage[2];
+                break;
+        }
         //Update AimBOT Target --- Get Target on ricochet with a sphere cast. Set EnemySet initial direction the same? but update gradually with acceleration + Clamp maxspeed.
         //Detect if target was either Enemy or ricochetSurface. If that is the case set target. if target was set we don't update target!! Only get target on Ricochet call!
     }
@@ -77,7 +91,6 @@ public class PlayerProjectile : MonoBehaviour
     private void RicochetProjectile(ContactPoint hitPoint)
     {
         
-
         if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
         {
             //This is if it is NOT a Yellow RichochetTarget -- put awwwweeesome sound here
@@ -147,9 +160,10 @@ public class PlayerProjectile : MonoBehaviour
         if (collision.collider.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().ApplyDamage(damage);
-            //enemySpawnMEGAPLACEHOLDER.EnemyDeath(); //THIIIIIS NEEEEEDS TOOOO BE MOOOOVED ---- Do it when I get access to Enemy script ///Make enemies move to random position at spawn. Enemy Nav Obstacle
-            //Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
+
+        Debug.Log(collision.gameObject.name);
 
     }
 

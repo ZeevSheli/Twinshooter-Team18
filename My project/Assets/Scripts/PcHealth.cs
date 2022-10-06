@@ -10,7 +10,6 @@ public class PcHealth : MonoBehaviour
     public GameObject firstHeart;
     public GameObject middleHeart;
     public GameObject finalHeart;
-    public GameObject deathUI;
 
     public AudioSource audioSource;
     public AudioClip hurtSound;
@@ -23,8 +22,6 @@ public class PcHealth : MonoBehaviour
         firstHeart.SetActive(true);
         middleHeart.SetActive(true);
         finalHeart.SetActive(true);
-        deathUI.SetActive(false);
-
     }
 
     // Update is called once per frame
@@ -81,9 +78,13 @@ public class PcHealth : MonoBehaviour
     void Death()
     {
         audioSource.PlayOneShot(deathSound, 0.6f);
-        deathUI.SetActive(true);
         Debug.Log("OOF");
         
+    }
+
+    public int GetHealth()
+    {
+        return currentHealth;
     }
 }
 
