@@ -26,6 +26,7 @@ public class PlayerProjectile : MonoBehaviour
 
     [Header("Hit FX")]
     [SerializeField] private ParticleSystem hitRicochet;
+    [SerializeField] private ParticleSystem hitShield;
 
     Vector3 directionToTarget;
 
@@ -173,6 +174,7 @@ public class PlayerProjectile : MonoBehaviour
         if (other.CompareTag("Void"))
         {
             Destroy(gameObject);
+            Instantiate(hitShield, other.transform.position, other.transform.rotation);
         }
 
     }

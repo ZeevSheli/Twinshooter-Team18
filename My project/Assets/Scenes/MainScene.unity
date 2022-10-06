@@ -7849,6 +7849,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2412817486952200809, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817486952200809, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817486952200809, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817487993728827, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817487993728827, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817487993728827, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817488794369452, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817488794369452, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412817488794369452, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3363920136178581316, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
       propertyPath: m_Name
       value: Non-diegetic Canvas
