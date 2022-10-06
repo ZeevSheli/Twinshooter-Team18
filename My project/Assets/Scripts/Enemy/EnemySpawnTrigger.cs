@@ -6,7 +6,6 @@ public class EnemySpawnTrigger : MonoBehaviour
 {
     EnemySpawner spawnGate;
     AudioSource enemyMusic;
-
     private void Start()
     {
         spawnGate = GetComponentInParent<EnemySpawner>();

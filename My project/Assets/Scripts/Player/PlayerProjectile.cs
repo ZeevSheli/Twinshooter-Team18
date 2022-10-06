@@ -27,6 +27,7 @@ public class PlayerProjectile : MonoBehaviour
     [Header("Hit FX")]
     [SerializeField] private ParticleSystem hitRicochet;
     [SerializeField] private ParticleSystem hitShield;
+    [SerializeField] private ParticleSystem hitEnemy;
 
     Vector3 directionToTarget;
 
@@ -43,7 +44,6 @@ public class PlayerProjectile : MonoBehaviour
     {
         rigidBody.AddRelativeForce(transform.forward * currentImpulse, ForceMode.VelocityChange);
     }
-
 
     private void Update()
     {
@@ -64,8 +64,7 @@ public class PlayerProjectile : MonoBehaviour
                 damage = ricochetDamage[2];
                 break;
         }
-        //Update AimBOT Target --- Get Target on ricochet with a sphere cast. Set EnemySet initial direction the same? but update gradually with acceleration + Clamp maxspeed.
-        //Detect if target was either Enemy or ricochetSurface. If that is the case set target. if target was set we don't update target!! Only get target on Ricochet call!
+       
     }
 
     public void SetImpulse(float projectileImpulse)
@@ -91,15 +90,14 @@ public class PlayerProjectile : MonoBehaviour
     private void RicochetProjectile(ContactPoint hitPoint)
     {
         
-        if (!hitPoint.otherCollider.CompareTag("RicochetTarget"))
+        if (!hitPoint.otherCollider.CompareTag("RicochetTarget")) //Projectile ricochet on something not specified as RicochetTarget
         {
-            //This is if it is NOT a Yellow RichochetTarget -- put awwwweeesome sound here
             audioSource.PlayOneShot(badBounceSound, 0.4f);
             ricochetCount--;
         }
-        else
+        else //Projectile ricochet on RicochetTarget (Yellow Marker)
         {            
-            audioSource.PlayOneShot(goodBounceSound, 0.6f); //this is when it hits a yellow thing
+            audioSource.PlayOneShot(goodBounceSound, 0.6f);
             Instantiate(hitRicochet, hitPoint.point, transform.rotation);
         }
 
@@ -115,15 +113,7 @@ public class PlayerProjectile : MonoBehaviour
 
             if (FindAimTarget(bounceDirection))
             {
-                //Debug.Log("FOUND TARGET"); 
-                //aimAssistActive = true; //extra stuff for dynamic aim assist mid movement.
                 AimAssist();
-            }
-            else
-            {
-                //Debug.Log("NO TARGET FOUND");
-                //desiredTarget = null; //does nothing currently. Comes into play when gradually curving towards moving target
-                //aimAssistActive = false;
             }
 
             transform.forward = directionToTarget;
@@ -138,7 +128,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         Debug.DrawRay(transform.position, direction * 5f, Color.green, 2f);
         
-        if(Physics.SphereCast(transform.position, aimAssistRadius, direction, out RaycastHit impact, Mathf.Infinity, aimAssistLayer)) //IMPROVE WITH SPHERECASTALL??? Prioritize enemies, ricochet and then wall
+        if(Physics.SphereCast(transform.position, aimAssistRadius, direction, out RaycastHit impact, Mathf.Infinity, aimAssistLayer))
         {        
             directionToTarget = impact.transform.position - transform.position;
             return true;                
@@ -161,6 +151,7 @@ public class PlayerProjectile : MonoBehaviour
         if (collision.collider.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().ApplyDamage(damage);
+            Instantiate(hitEnemy, collision.transform.position, collision.transform.rotation);
             Destroy(gameObject);
         }
 

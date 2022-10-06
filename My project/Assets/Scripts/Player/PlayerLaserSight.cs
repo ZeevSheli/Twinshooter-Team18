@@ -6,7 +6,6 @@ public class PlayerLaserSight : MonoBehaviour
 {
     private PlayerMovementController playerMovementController;
     private LineRenderer laserSight;
-
     private void Start()
     {
         playerMovementController = GetComponentInParent<PlayerMovementController>();

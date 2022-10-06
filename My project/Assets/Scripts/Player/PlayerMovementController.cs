@@ -117,6 +117,7 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    //@INPUT: Additional Method not provided in the original script. Provides access to rightStickPosition to other scripts.
     public Vector2 GetLookRotation()
     {
         return rightStickPosition;

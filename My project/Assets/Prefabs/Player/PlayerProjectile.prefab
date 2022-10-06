@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6244598871844259297}
   m_Layer: 7
   m_Name: PlayerProjectile
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +144,7 @@ MonoBehaviour:
   aimAssistRadius: 0.8
   hitRicochet: {fileID: 1254403408633137145, guid: d0b1701da12456a41a50838caaf24015, type: 3}
   hitShield: {fileID: 1254403408633137145, guid: 60ccb272ca9b59b46a09bd657f07cbff, type: 3}
+  hitEnemy: {fileID: 1254403408633137145, guid: bd5f2e75ea4b3914b9f04d3470754d77, type: 3}
   audioSource: {fileID: -2905291704930165152}
   goodBounceSound: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
   badBounceSound: {fileID: 8300000, guid: aad5e14f83edd2f4193a3cb869146d83, type: 3}
@@ -156,7 +157,7 @@ AudioSource:
   m_GameObject: {fileID: 555510557692424903}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fedfddb43807d2748899075ae52f967c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 00665a5adb5364e48bb73aefc7572891, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.649

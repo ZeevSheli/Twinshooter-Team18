@@ -1457,7 +1457,7 @@ AudioSource:
   m_GameObject: {fileID: 369023229}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fedfddb43807d2748899075ae52f967c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 42c107f81123f464dbb27f8d31e65f6f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1775,7 +1775,7 @@ AudioSource:
   m_GameObject: {fileID: 430536070}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fedfddb43807d2748899075ae52f967c, type: 2}
   m_audioClip: {fileID: 8300000, guid: e2da11519a1c4cb43ba6d5a45e6c6684, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3815,10 +3815,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2089315153, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 2737791784416854542, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7623,7 +7619,7 @@ MonoBehaviour:
   level: {fileID: 1649919959}
   deathRestartDuration: 4
   gameOverAudio: {fileID: 8300000, guid: 9320f4b1578403446ac7a8deec01ed5d, type: 3}
-  audioVolume: 0.25
+  audioVolume: 0.2
 --- !u!82 &1886262192
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7633,10 +7629,10 @@ AudioSource:
   m_GameObject: {fileID: 1886262189}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fedfddb43807d2748899075ae52f967c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7848,42 +7844,6 @@ PrefabInstance:
     - target: {fileID: 467942082732048005, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817486952200809, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817486952200809, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817486952200809, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817487993728827, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817487993728827, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817487993728827, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817488794369452, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817488794369452, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2412817488794369452, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3363920136178581316, guid: 6a4167eb81036ac408e35164b01b6336, type: 3}
       propertyPath: m_Name

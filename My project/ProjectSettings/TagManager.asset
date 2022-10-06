@@ -9,6 +9,7 @@ TagManager:
   - RicochetTarget
   - Void
   - Spear
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

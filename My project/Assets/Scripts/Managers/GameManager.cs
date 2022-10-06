@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip gameOverAudio;
     [SerializeField] private float audioVolume;
-    private float timerRestart;
-    
+    private float timerRestart;    
     private void Awake()
     {
         if(Instance != null && Instance != this)

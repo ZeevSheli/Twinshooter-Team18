@@ -10,7 +10,6 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     
-
     EnemyAttack enemyAttack;
 
     // Start is called before the first frame update

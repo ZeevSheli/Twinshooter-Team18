@@ -46,8 +46,7 @@ public class EnemySpawner : MonoBehaviour
         audioSource.PlayOneShot(enemySpawningSound, 0.83f);
         currentEnemies++;
         GameObject enemy = Instantiate(enemyPrefabs[0], spawnLocation.position, spawnLocation.rotation);
-        enemy.GetComponent<EnemyHealth>().SetSpawner(this);
-        
+        enemy.GetComponent<EnemyHealth>().SetSpawner(this);      
     }
 
     public bool GetSpawnGateActive()
